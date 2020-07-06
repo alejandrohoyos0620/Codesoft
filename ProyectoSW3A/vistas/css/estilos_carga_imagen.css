@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    
+    background-color: #2962ff;
+}
+.formu{
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:150px auto;
+    background-color: white;
+}
+.input{
+    width: 60%;
+    height: 35px;
+    margin-bottom: 20px;
+    border: solid 2px #2962ff;
+}
+.titulo{
+    color:#2962ff;
+    font-size: 36px;
+    margin:36px 20%;
+    width: 100%;
+}
+.div_boton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn_subir{
+    border: solid 2px #2962ff;
+    width: 60%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+    color:#2962ff;
+    transform: 1s all;
+    margin-bottom: 36px;
+}
+.btn_subir:hover{
+    background-color: #2962ff;
+    color:white;
+}
