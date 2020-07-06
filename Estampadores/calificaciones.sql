@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2020 a las 00:54:31
+-- Tiempo de generación: 06-07-2020 a las 03:52:20
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -18,49 +18,39 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `usuarios`
+-- Base de datos: `calificaciones`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios_ventas`
+-- Estructura de tabla para la tabla `estampadores`
 --
 
-CREATE TABLE `usuarios_ventas` (
-  `ID` int(10) NOT NULL,
-  `Nombre` varchar(30) NOT NULL,
-  `Correo` varchar(30) NOT NULL,
-  `Rol` varchar(30) NOT NULL
+CREATE TABLE `estampadores` (
+  `ID` int(11) NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Calificacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuarios_ventas`
+-- Volcado de datos para la tabla `estampadores`
 --
 
-INSERT INTO `usuarios_ventas` (`ID`, `Nombre`, `Correo`, `Rol`) VALUES
-(1, 'Jaime', 'jaime@jaja.com', 'usuario'),
-(3, 'pedro', 'pedro@jeje', 'administrador');
+INSERT INTO `estampadores` (`ID`, `Nombre`, `Calificacion`) VALUES
+(1, 'juan', 3),
+(2, 'pedro', 1),
+(3, 'juan', 4);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `usuarios_ventas`
+-- Indices de la tabla `estampadores`
 --
-ALTER TABLE `usuarios_ventas`
+ALTER TABLE `estampadores`
   ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `usuarios_ventas`
---
-ALTER TABLE `usuarios_ventas`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

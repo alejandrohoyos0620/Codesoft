@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- agrego el cdn de jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Estampadores</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <h2>Buscar estampador por nombre de usuario </h2>
+        <label for="nombreEstampador">Ingrese su nombre de usuario:</label>
+        <input type="text" name="nombreEstampador" id="nombreEstampador">
+        <button id="enviar">
+            buscar
+        </button>
+    </div>
+    <div id="resultados"></div>
+    <img id="imgPrincipal" src="../img/0.jpg" alt="">
+    <script>
+        //al momento de hacer click en el boton con id enviar se activa esta funcion de jquery 
+        $(document).on('click', '#enviar', function() {
+            //guardamos el valor de el input con id nombreEstampador por medio del metodo val() 
+            //que es un metodo reservado de jquery 
+            var nombreEstampador = $("#nombreEstampador").val();
+            if (nombreEstampador != "") {
+                $.ajax({
+                    //la ruta siempre debe de ser completa
+                    url: '/Estampadores/php/getEstampadores.php',
+                    type: 'POST',
+                    data: {
+                        nombreEstampador: nombreEstampador
+                    },
+                    success: function(data) {
+                        $("#resultados").empty();
+                        for (let i = 0; i < data.length; i++) {
+                            console.log(data[i].promedio);
+                            $("#resultados").append("<strong style='color:red;'>Tu promedio es: " + data[i].promedio + "</strong>");
+                            //por medio de .attr podemos modificar los atributos del elemento que queramos 
+                            //$("#imgPrincipal").attr("src", "https://i0.pngocean.com/files/674/615/612/clip-art-gold-star.jpg");
+                            if (data[i].promedio >= 1 && data[i].promedio < 2) {
+                                $("#imgPrincipal").attr("src", "../img/1.jfif");
+                            } else if (data[i].promedio >= 2 && data[i].promedio < 3) {
+                                $("#imgPrincipal").attr("src", "../img/2.jfif");
+                            } else if (data[i].promedio >= 3 && data[i].promedio < 4) {
+                                $("#imgPrincipal").attr("src", "../img/3.jfif");
+                            } else if (data[i].promedio >= 4 && data[i].promedio < 5) {
+                                $("#imgPrincipal").attr("src", "../img/4.jfif");
+                            } else if (data[i].promedio >= 5) {
+                                $("#imgPrincipal").attr("src", "../img/5.jfif");
+                            }
+                        }
+                    },
+                    error: function() {
+                        console.log("No se ha podido obtener la información");
+                    }
+                });
+            } else {
+                alert("El campo nombre de usuario es obligatorio");
+            }
+            //console.log(nombreEstampador);
+        });
+    </script>
+</body>
+
+</html>
