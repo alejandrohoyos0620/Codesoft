@@ -1,4 +1,11 @@
 <?php
+/*
+	/uploadImage Crea un archivo image para los estampados
+	/@param userType especifica que tipo de usuario subio el archivo 
+	/@param fileName especifica el nombre del archivo image para los estampados
+	/ return devuelve el nombre del archivo file concatenado a un numero random entre 0 y 999
+
+*/
 function uploadImage($userType,$fileName) {
         
         $file= $fileName.rand(0,999);    
@@ -21,4 +28,3 @@ function uploadImage($userType,$fileName) {
         return $file;
     }
     ?>
-    

@@ -12,7 +12,12 @@ class ImagenCliente_ImpDTO implements IImagenClienteContratoDTO{
     public function __construct(IImagenClienteContrato $valor){
         $this->app=$valor;
     }
-
+	/*
+	/Guardar instancia un mapeador y guarda en la base de datos
+	/@param dato contiene la informacion para el mapeador 
+	/@param db contiene la informacion de la base de datos
+	/ return La respuesta de la base de datos
+	*/
     public function Guardar(ImagenClienteDTO $dato,$db){
         $mapeadorDTO= new MapeadorImageClienteDTO();
         $mapeador= $mapeadorDTO->mapeadorCODB($dato);

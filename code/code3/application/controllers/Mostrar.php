@@ -24,7 +24,10 @@ class Mostrar extends CI_Controller {
         $this->dep=$app;
    
     }
-	
+/*
+	/index Carga 2 vistas header y body, Valida una peticion post y 
+	Crea una nueva ImagenClienteDTO y lo guarda en la base de datos
+*/
 	public function index()
 	{
         $this->load->view('VistaImagen/header');
