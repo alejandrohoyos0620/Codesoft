@@ -1,12 +1,12 @@
 <?php
-require 'vendor/autoload.php';
+//require 'vendor/autoload.php';
 require 'application\controllers\DTO\ImagenClienteDTO.php';
 require 'application\controllers\contratosDTO\IImagenClienteContratoDTO.php';
 require 'application\controllers\implementDTO\ImagenCliente_ImpDTO.php';
 require 'application\models\modelos\ImagenCliente_model.php';
 require 'application\models\contratos\IImagenClienteContraro.php';
 require 'application\models\implement\ImagenCliente_Imp.php';
-require 'vendor\psr\container\src\ContainerInterface.php';
+//require 'vendor\psr\container\src\ContainerInterface.php';
 
 
 

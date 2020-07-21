@@ -6,9 +6,10 @@
 	/ return devuelve el nombre del archivo file concatenado a un numero random entre 0 y 999
 
 */
+
 function uploadImage($userType,$fileName) {
         
-        $file= $fileName.rand(0,999);    
+        $file= $fileName.rand(0,999);   
         $mi_archivo = 'image';
         $config['upload_path'] = "imagenes/".$userType."/";
         $config['file_name'] = $file;
