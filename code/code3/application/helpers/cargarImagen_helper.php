@@ -1,4 +1,9 @@
 <?php
+
+	
+
+
+
 /*
 	/uploadImage Crea un archivo image para los estampados
 	/@param userType especifica que tipo de usuario subio el archivo 
