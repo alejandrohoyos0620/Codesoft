@@ -67,7 +67,7 @@ class Prueba extends CI_Controller {
  }
 public function index()
 {
-$this->load->view('VistaImagen/header');
+$this->load->view('header');
         $this->load->view('VistaImagen/body');
 		$this->load->library('unit_test');
 		if(isset($_POST['submit'])){

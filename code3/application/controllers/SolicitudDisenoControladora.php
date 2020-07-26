@@ -60,8 +60,7 @@ class SolicitudDisenoControladora extends CI_Controller {
         $resultadoPrendas= $this->traerPrendas();
         $resultadoTelas= $this->traerTelas();      
 		$this->load->view('header');
-        $this->load->view('vistasolicitardiseno', compact("resultadoTallas","resultadoPrendas","resultadoTelas"));
-        $this->load->library('unit_test');         
+        $this->load->view('vistasolicitardiseno', compact("resultadoTallas","resultadoPrendas","resultadoTelas"));              
 		if(isset($_POST['submit'])){        
         $userType="cliente";
         $idCliente=1;        
