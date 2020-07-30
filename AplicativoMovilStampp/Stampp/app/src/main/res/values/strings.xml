@@ -18,5 +18,24 @@
     <string name="txtPaletaColor">Color elegido</string>
     <string name="txtUrl">URL</string>
     <string name="edtNombreImagen">Edit Nombre Imagen</string>
+    <string name="encRegistroCliente">Registro como comprador Stampp</string>
+    <string name="descripcion">descipcion</string>
+    <string name="txtNombreUsuario">Nombre de usuario</string>
+    <string name="txtNombre">Nombre</string>
+    <string name="txtApellidos">Apellidos</string>
+    <string name="txtFechaNacimiento">Fecha de nacimiento</string>
+    <string name="txtCorreoElectronico">Correo electronico</string>
+    <string name="txtContrasena">Contraseña</string>
+    <string name="txtVerifContrasena">Verificar contraseña</string>
+    <string name="edtNombreUsuario">Edit nombre usuario</string>
+    <string name="edtNombre">Edit Nombre</string>
+    <string name="edtContrasena">edtContraseña</string>
+    <string name="edtVerifContrasena">Edit verificar contraseña</string>
+    <string name="edtCorreoElectronico">Edit correo electronico</string>
+    <string name="edtFechaNacimiento">Edit fecha de nacimiento</string>
+    <string name="edtApellidos">Edit Apellidos</string>
+    <string name="btnRegistrar">Registrar</string>
+    <string name="btnFacebook">Facebook</string>
+    <string name="btnGoogle">Google</string>
 
 </resources>
