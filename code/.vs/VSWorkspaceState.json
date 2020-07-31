@@ -1,12 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\code3",
-    "\\code3\\application",
-    "\\code3\\application\\controllers",
-    "\\code3\\application\\controllers\\implementDTO",
-    "\\code3\\application\\controllers\\mapeadoresDTO"
+    "\\application",
+    "\\application\\controllers",
+    "\\application\\controllers\\DTO",
+    "\\application\\controllers\\implementDTO",
+    "\\application\\controllers\\mapeadoresDTO",
+    "\\application\\controllers\\Pruebas",
+    "\\application\\helpers",
+    "\\application\\views",
+    "\\application\\views\\VistaImagen"
   ],
-  "SelectedNode": "\\code3\\application\\controllers\\dependencia.php",
+  "SelectedNode": "\\application\\controllers\\Mostrar.php",
   "PreviewInSolutionExplorer": false
 }
