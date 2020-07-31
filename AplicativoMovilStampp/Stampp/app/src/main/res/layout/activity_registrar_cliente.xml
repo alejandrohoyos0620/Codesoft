@@ -261,7 +261,6 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/holo_green_light"
                     android:elevation="200dp"
-                    android:onClick="Enviar"
                     android:text="@string/btnRegistrar"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"
                     android:textColor="@color/botoncolor"

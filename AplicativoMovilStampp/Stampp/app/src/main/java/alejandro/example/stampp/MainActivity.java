@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         });
         colorPiker.show();
     }
-    public void Enviar(View view ){
+    /**public void Enviar(View view ){
         Intent siguiente = new Intent(this, RegistrarClienteActivity.class);
         startActivity(siguiente);
-    }
+    }*/
 }
