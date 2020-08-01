@@ -14,9 +14,8 @@ class RegistroCompradorEstampadosControladora extends CI_Controller {
    
     }
 /*
-    /index Carga 2 vistas header y vistaSolicitudDiseño a la cual le enviamos las los dato las tallas,
-    prendas,tipo de tela, Valida una peticion post y crea una nueva ImagenClienteDTO y SolicitudDiseñoDTO 
-    y lo guarda en la base de datos.
+    /index Carga 2 vistas: header y vistaRegistrarCompradorEstampados. Tambien se llama a la función registrar cuando 
+    se activa el submit de la vista.
 */
 
 
@@ -28,7 +27,11 @@ class RegistroCompradorEstampadosControladora extends CI_Controller {
             $this->Registrar();   
          } 	
     }
-
+/*
+    Registrar captura los datos de los campos del formulario en vistaRegistrarCompradorEstampados, 
+    valida la coincidencia de las contraseñas, crea un registro de comprador, lo almacena en la base de datos y 
+    notifica el estado del registro.
+*/
     public function Registrar (){
         $nombreUsuario1= $_POST['nombreUsuario'];
         $nombre=$_POST['nombre'];
