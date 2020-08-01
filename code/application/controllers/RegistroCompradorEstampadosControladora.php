@@ -43,30 +43,42 @@ class RegistroCompradorEstampadosControladora extends CI_Controller {
     if (strlen($nombre) >= 1 && strlen($nombreUsuario1) >= 1 && strlen($apellidos) >= 1 
     && strlen($fechaNacimiento) >= 1 && strlen($email) >= 1 && strlen($contrasena) >= 1 
     && strlen($verificarContrasena) >= 1 ) {
-        if($contrasena == $verificarContrasena){
-            $crearRegistroComprador= new RegistroCompradorDTO($nombreUsuario1,
-            $nombre,$apellidos,$fechaNacimiento,$email,$contrasena,$verificarContrasena);
+        if((substr($fechaNacimiento, -4)>1920)&& substr($fechaNacimiento,-4)<2002){
+            if($contrasena == $verificarContrasena){
+                $crearRegistroComprador= new RegistroCompradorDTO($nombreUsuario1,
+                $nombre,$apellidos,$fechaNacimiento,$email,$contrasena,$verificarContrasena);
                 if($this->registro->GuardarRegistro($crearRegistroComprador,$this->db)) {
-                ?> 
-                    <h3 class="ok">¡Te has inscrito correctamente!</h3>
-                <?php
-                } else {
-                ?> 
-                    <h3 class="bad">¡Lo sentimos, ha ocurrido un error!</h3>
-                <?php
+                    ?> 
+                        <h3 class="ok">¡Te has inscrito correctamente!</h3>
+                    <?php
+                } 
+                else {
+                    ?> 
+                        <h3 class="bad">¡Lo sentimos, ha ocurrido un error!</h3>
+                    <?php
                 }
-        }else {
+            }
+            else{
                 ?> 
                     <h3 class="bad">¡Las contraseñas no coinciden!</h3>
                 <?php
+            }
         }
-        }else {
+        else{
+                ?> 
+                    <h3 class="bad">No cumples con la edad requerida para registrarte</h3>
+        
+                <?php
+            }
+        }
+    else{
             ?> 
-                 <h3 class="bad">¡Por favor complete los campos!</h3>
-    
+                <h3 class="bad">Completa los campos por favor</h3>
             <?php
-         }
-
+        }
+        
     }
+
 }
+
 ?>

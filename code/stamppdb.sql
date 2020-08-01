@@ -38,11 +38,7 @@ CREATE TABLE `imagen_cliente` (
 -- Volcado de datos para la tabla `imagen_cliente`
 --
 
-INSERT INTO `imagen_cliente` (`ID`, `Nombre`, `URL`, `ID_Cliente`) VALUES
-(1, 'batman', '0', 1),
-(2, 'batman', '0', 1),
-(3, 'batman', '0', 1),
-(4, 'batman', '0', 1);
+
 
 -- --------------------------------------------------------
 
@@ -97,8 +93,6 @@ CREATE TABLE `registrarcomprador` (
 -- Volcado de datos para la tabla `registrarcomprador`
 --
 
-INSERT INTO `registrarcomprador` (`id_RegistroComprador`, `nombreUsuario`, `nombre`, `apellidos`, `fechaNacimiento`, `email`, `contrasena`, `verificarContrasena`) VALUES
-(1, 'marcela98', 'Marcela', 'Henao', '14/05/1998', 'diana.1701521022@ucaldas.edu.co', 'marce', 'marce');
 
 -- --------------------------------------------------------
 
@@ -120,11 +114,6 @@ CREATE TABLE `solicituddiseño` (
 -- Volcado de datos para la tabla `solicituddiseño`
 --
 
-INSERT INTO `solicituddiseño` (`Id_solicitudDiseño`, `Id_Prenda`, `Id_Talla`, `Color`, `Id_tela`, `DescripcionDiseño`, `Id_imagen`) VALUES
-(1, 1, 1, '#6366eb', 1, 'La camisa la tipo esqueleto', 14),
-(2 1, 1, '#000000', 1, '  Escribe tus comentarios aqubjhvjví...', 14),
-(3, 1, 1, '#a44141', 1, 'La camisa tipo esqueleto', 14),
-(4, 1, 1, '#a44141', 1, 'La camisa tipo esqueleto', 14);
 
 -- --------------------------------------------------------
 

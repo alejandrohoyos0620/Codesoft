@@ -33,8 +33,8 @@
                 <button type="submit" value="Submit" name="submit" class="btn-enviar-registro-comprador">Enviar registro</button>
             </div>
             <div class="item-registro-comprador item-btns">
-                <a href="#" class="btn-registro-comprador google"><i class="fab fa-google"></i>  Registrarse con Google</a>
-                <a href="#" class="btn-registro-comprador facebook"><i class="fab fa-facebook-square"></i>  Registrarse con Facebook</a>
+                <a href="#" class="btn-registro-comprador google"><em class="fab fa-google"></em>  Registrarse con Google</a>
+                <a href="#" class="btn-registro-comprador facebook"><em class="fab fa-facebook-square"></em>  Registrarse con Facebook</a>
             </div>
         </form>
     </div>
