@@ -13,5 +13,12 @@ class Prenda_Imp implements IPrendasContrato {
     
     }
 
+    public function BuscarId($prenda,$db){
+      $mapeador= new MapeadorPrendas();
+      $db->select("Id_Prenda")->from("prendas")->where('TipoPrenda',trim($prenda));
+      $resultado= $db->get()->result();
+      return $mapeador->mapeadorDBCO($resultado); 
+
+  }
 }
 ?>

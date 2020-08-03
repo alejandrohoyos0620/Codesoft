@@ -14,6 +14,12 @@
 public function getNombre(){
      return $this->nombre;
  }
+ public function toString():array{
+    return[
+        'Id_Talla'=>$this->idTalla,
+        'Nombre'=>$this->nombre
+    ];
+}
  
  
 

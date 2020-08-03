@@ -13,7 +13,10 @@ class Talla_ImpDTO implements ITallasContratoDTO{
     $Mapeador= new MapeadorTallasDTO();
     $lista= $this->app->ListarTallas($db);
     return $Mapeador->mapeadorArrayDBCO ($lista);
-    
+    }
+    public function BuscarId($talla,$db){
+        return $this->app->BuscarId($talla, $db);
+
     }
 
 }

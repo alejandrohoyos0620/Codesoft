@@ -12,6 +12,13 @@ class Tela_Imp implements ITelasContrato {
     return $mapeador->mapeadorArrayDBCO($query);
     
     }
+    public function BuscarId($tela,$db){
+      $mapeador= new MapeadorTelas();
+      $db->select("Id_tela")->from("telas")->where('Nombre',trim($tela));
+      $resultado= $db->get()->result();
+      return $mapeador->mapeadorDBCO($resultado); 
+
+  }
 
 }
 ?>

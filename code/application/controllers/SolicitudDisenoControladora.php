@@ -44,27 +44,70 @@ class SolicitudDisenoControladora extends CI_Controller {
 */
 
 
-	public function index()
-	{   
-        $resultadoTallas = $this->traerTallas();
-        $resultadoPrendas= $this->traerPrendas();
-        $resultadoTelas= $this->traerTelas();      
-		$this->load->view('header');
-        $this->load->view('vistasolicitardiseno', compact("resultadoTallas","resultadoPrendas","resultadoTelas"));              
-		if(isset($_POST['submit'])){        
-        $userType="cliente";
-        $idCliente=1;        
-        $urlImagen=uploadImage($userType,$_POST['imagename']);         
+public function index()
+{   
+    $resultadoTallas = $this->traerTallas();
+    $resultadoPrendas= $this->traerPrendas();
+    $resultadoTelas= $this->traerTelas();      
+    $this->load->view('header');
+    $this->load->view('vistasolicitardiseno', compact("resultadoTallas","resultadoPrendas","resultadoTelas"));              
+    
+    if(isset($_POST['submit'])){   
+       $this-> Solicitar();
+    }
+
+    
+}
+public function Solicitar()
+{   
+    $userType="cliente";
+    $idCliente=1;   
+    if(isset($_POST['Movil'])){
+       $talla = $this -> traerIdTalla($_POST['talla']);
+       $prenda= $this -> traerIdPrenda($_POST['prenda']); 
+       $tela= $this -> traerIdTela($_POST['tela']);
+       $nombreImagen = $_POST['imagename'];
+       $imagenBit = $_POST['imagenMovil'];
+       $urlImagen=uploadImageMovil($userType,$nombreImagen,$imagenBit); 
+       echo $urlImagen;
+    }
+    else{
+        $talla= $_POST['talla'];
+        $prenda= $_POST['prenda']; 
+        $tela=$_POST['tela'];
+        $urlImagen=uploadImage($userType,$_POST['imagename']);     
+        
+    }
+    $color=$_POST['color'];
+    $descripcion=$_POST['descripcion'];
+    if (strlen($prenda) >= 1 && strlen($talla) >= 1 && strlen($color) >= 1 
+    && strlen($tela) >= 1 ) {
+       
         $datos= new ImagenClienteDTO($urlImagen,$_POST['imagename'],$idCliente);        
         $this->dep->Guardar($datos,$this->db); 
         $resultadoImagen= $this->traerIdImagen($idCliente,$urlImagen);
-        $crearSolicitud= new SolicitudDisenoDTO($_POST['prenda'],
-        $_POST['talla'],$_POST['color'],$_POST['tela'],$_POST['descripcion'],$resultadoImagen);
+        
+        $crearSolicitud= new SolicitudDisenoDTO($prenda,
+        $talla,$color,$tela,$descripcion,$resultadoImagen);
         $this->solicitud->Guardar($crearSolicitud,$this->db);
-		 }
-
-		
     }
+    
+    
+    
+}
+
+public function traerIdTalla($talla)
+{  
+    return $this->tallas->BuscarID($talla, $this->db);
+}
+public function traerIdPrenda($prenda)
+{  
+    return $this->prendas->BuscarID($prenda, $this->db);
+}
+public function traerIdTela($tela)
+{  
+    return $this->telas->BuscarID($tela, $this->db);
+}
     /**
      * traerTallas, se encarga de traer un array con las tallas de ropa.
      */
