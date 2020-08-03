@@ -20,7 +20,7 @@
     <string name="txtUrl">URL</string>
     <string name="edtNombreImagen">Edit Nombre Imagen</string>
     <string name="encRegistroCliente">Registro como comprador Stampp</string>
-    <string name="descripcion">descripcion</string>
+    <string name="txtDescripcion">Descripción</string>
     <string name="txtNombreUsuario">Nombre de usuario:</string>
     <string name="txtNombre">Nombre:</string>
     <string name="txtApellidos">Apellidos:</string>
@@ -38,4 +38,5 @@
     <string name="btnRegistrar">Registrar</string>
     <string name="btnFacebook">Facebook</string>
     <string name="btnGoogle">Google</string>
+    <string name="edtDescripcion">Escriba su descripción aquí</string>
 </resources>
