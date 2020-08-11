@@ -231,7 +231,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:contentDescription="@string/descripcion"
+                    android:contentDescription="@string/txtDescripcion"
                     app:srcCompat="@drawable/facebookboton" />
 
                 <ImageButton
@@ -240,7 +240,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
-                    android:contentDescription="@string/descripcion"
+                    android:contentDescription="@string/txtDescripcion"
                     app:srcCompat="@drawable/googlebuton" />
             </LinearLayout>
 
