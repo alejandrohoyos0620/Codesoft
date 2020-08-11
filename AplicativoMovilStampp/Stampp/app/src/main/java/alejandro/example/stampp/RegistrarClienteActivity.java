@@ -40,7 +40,7 @@ public class RegistrarClienteActivity extends AppCompatActivity {
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ValidarUsuario( "http://192.168.56.1/code/?c=RegistroCompradorEstampadosControladora&m=Registrar");
+                ValidarUsuario( "http://192.168.1.64/code/?c=RegistroCompradorEstampadosControladora&m=Registrar");
             }
         });
 

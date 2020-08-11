@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
     Button mButton;
     Button btnFoto;
     TextView txtColor;
+    TextView txtColorElegido;
     ImageView imgFoto;
     private String path;
     File fileImagen;
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerTalla =(Spinner)findViewById(R.id.sprinTalla);
         spinnerTela =(Spinner)findViewById(R.id.sprinTela);
         txtColor = (TextView)findViewById(R.id.txtPaletaColor);
+        txtColorElegido = (TextView)findViewById(R.id.colorelegido);
         String [] opcionTipo = {"Seleccionar","Camisa","Buso","Pañoleta","Tapabocas","Gorra"};
         String [] opcionTalla = {"Seleccionar","XS","S","M","L","XL"};
         String [] opcionTela = {"Seleccionar","Loneta","Microfibra","Strech","Seda"};
@@ -344,6 +346,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 cadena=Integer.toHexString(valor);
                 txtColor.setText("#"+cadena);
+                txtColor.setVisibility(View.INVISIBLE);
+                txtColorElegido.setBackgroundColor(color);
+
             }
         });
         colorPiker.show();

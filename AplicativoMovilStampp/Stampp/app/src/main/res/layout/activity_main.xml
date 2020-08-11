@@ -132,9 +132,16 @@
 
                     <TextView
                         android:id="@+id/txtPaletaColor"
-                        android:layout_width="100dp"
-                        android:layout_height="80dp"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/colorelegido"
+                        android:layout_width="200dp"
+                        android:layout_height="30dp"
                         android:gravity="center"
                         android:text="@string/txtPaletaColor"
                         android:textColor="@android:color/black" />
@@ -142,8 +149,8 @@
                     <Button
                         android:id="@+id/button"
                         style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="99dp"
+                        android:layout_height="60dp"
                         android:background="@android:color/darker_gray"
                         android:elevation="250dp"
                         android:gravity="center"

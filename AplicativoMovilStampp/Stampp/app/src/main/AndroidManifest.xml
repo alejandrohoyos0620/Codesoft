@@ -20,6 +20,7 @@
         android:usesCleartextTraffic="true">
 
         <activity android:name=".RegistrarClienteActivity" android:label="@string/encRegistroCliente">
+
         </activity>
 
         <activity android:name=".MainActivity"
