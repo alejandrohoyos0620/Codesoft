@@ -15,6 +15,10 @@ class Tela_ImpDTO implements ITelasContratoDTO{
     return $Mapeador->mapeadorArrayDBCO ($lista);
     
     }
+    public function BuscarId($tela,$db){
+        return $this->app->BuscarId($tela, $db);
+
+    }
 
 }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-07-2020 a las 23:08:27
+-- Tiempo de generación: 02-08-2020 a las 04:23:18
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -38,7 +38,11 @@ CREATE TABLE `imagen_cliente` (
 -- Volcado de datos para la tabla `imagen_cliente`
 --
 
-
+INSERT INTO `imagen_cliente` (`ID`, `Nombre`, `URL`, `ID_Cliente`) VALUES
+(1, 'batman', '0', 1),
+(2, 'batman', '0', 1),
+(3, 'batman', '0', 1),
+(4, 'batman', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -70,7 +74,10 @@ CREATE TABLE `prendas` (
 
 INSERT INTO `prendas` (`Id_Prenda`, `TipoPrenda`) VALUES
 (1, 'Camisa'),
-(2, 'Pantalón');
+(2, 'Buso'),
+(3, 'Pañoleta'),
+(4, 'Tapabocas'),
+(5, 'Gorra');
 
 -- --------------------------------------------------------
 
@@ -93,6 +100,8 @@ CREATE TABLE `registrarcomprador` (
 -- Volcado de datos para la tabla `registrarcomprador`
 --
 
+INSERT INTO `registrarcomprador` (`id_RegistroComprador`, `nombreUsuario`, `nombre`, `apellidos`, `fechaNacimiento`, `email`, `contrasena`, `verificarContrasena`) VALUES
+(1, 'marcela98', 'Marcela', 'Henao', '14/05/1998', 'diana.1701521022@ucaldas.edu.co', 'marce', 'marce');
 
 -- --------------------------------------------------------
 
@@ -110,11 +119,6 @@ CREATE TABLE `solicituddiseño` (
   `Id_imagen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `solicituddiseño`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -131,8 +135,11 @@ CREATE TABLE `tallas` (
 --
 
 INSERT INTO `tallas` (`Id_Talla`, `Nombre`) VALUES
-(1, 'XL'),
-(2, 'XXL');
+(1, 'XS'),
+(2, 'S'),
+(3, 'M'),
+(4, 'L'),
+(5, 'XL');
 
 -- --------------------------------------------------------
 
@@ -150,7 +157,10 @@ CREATE TABLE `telas` (
 --
 
 INSERT INTO `telas` (`Id_tela`, `Nombre`) VALUES
-(1, 'Tela1');
+(1, 'Loneta'),
+(2, 'Microfibra'),
+(3, 'Strech'),
+(4, 'Seda');
 
 --
 -- Índices para tablas volcadas
@@ -223,13 +233,13 @@ ALTER TABLE `imagen_estampador`
 -- AUTO_INCREMENT de la tabla `prendas`
 --
 ALTER TABLE `prendas`
-  MODIFY `Id_Prenda` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Prenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `registrarcomprador`
 --
 ALTER TABLE `registrarcomprador`
-  MODIFY `id_RegistroComprador` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_RegistroComprador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `solicituddiseño`
@@ -241,13 +251,13 @@ ALTER TABLE `solicituddiseño`
 -- AUTO_INCREMENT de la tabla `tallas`
 --
 ALTER TABLE `tallas`
-  MODIFY `Id_Talla` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Talla` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `telas`
 --
 ALTER TABLE `telas`
-  MODIFY `Id_tela` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_tela` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

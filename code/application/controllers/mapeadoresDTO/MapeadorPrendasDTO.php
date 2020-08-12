@@ -7,7 +7,8 @@ class MapeadorPrendasDTO extends MapeadorBaseDTO {
         return false;
     }
     public  function mapeadorDBCO ($datosDB){
-             return false;
+        $data= new PrendasDTO( $datosDB->getIdPrenda(),$datosDB->getTipo());
+        return $data;
 
     }  
     /**

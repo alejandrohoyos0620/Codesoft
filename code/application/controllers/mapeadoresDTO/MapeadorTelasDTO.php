@@ -7,7 +7,8 @@ class MapeadorTelasDTO extends MapeadorBaseDTO {
         return false;
     }
     public  function mapeadorDBCO ($datosDB){
-             return false;
+        $data= new TelasDTO( $datosDB->getIdTela(),$datosDB->getNombre());
+        return $data;
 
     }  
     /**

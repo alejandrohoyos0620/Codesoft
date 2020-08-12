@@ -4,10 +4,13 @@ class MapeadorTallasDTO extends MapeadorBaseDTO {
     }
 
     public function mapeadorCODB ($datosCO){  
-        return false;
+        $data= new Tallas($datosCO->getIdTalla(),$datosCO->getNombre());
+        return $data;
     }
     public  function mapeadorDBCO ($datosDB){
-             return false;
+        $data= new TallasDTO( $datosDB->getIdTalla(),$datosDB->getNombre());
+        return $data;
+
 
     }  
     /**

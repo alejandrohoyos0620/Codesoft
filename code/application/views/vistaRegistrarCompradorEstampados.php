@@ -25,16 +25,16 @@
             </div>
             <div class="item-registro-comprador">
                 <label class="label-registro-comprador" for="contrasena">Contraseña:</label>
-                <input type="text" name="contrasena" class="contrasena-comprador" required/>
+                <input type="password" name="contrasena" class="contrasena-comprador" required/>
                 <label class="label-registro-comprador label-r2" for="contrasena2">Verificar contraseña:</label>
-                <input type="text" name="verificarContrasena" class="contrasena2-comprador" required/>
+                <input type="password" name="verificarContrasena" class="contrasena2-comprador" required/>
             </div>
             <div class="item-registro-comprador">
                 <button type="submit" value="Submit" name="submit" class="btn-enviar-registro-comprador">Enviar registro</button>
             </div>
             <div class="item-registro-comprador item-btns">
-                <a href="#" class="btn-registro-comprador google"><em class="fab fa-google"></em>  Registrarse con Google</a>
-                <a href="#" class="btn-registro-comprador facebook"><em class="fab fa-facebook-square"></em>  Registrarse con Facebook</a>
+                <a href="#" class="btn-registro-comprador google"><i class="fab fa-google"></i>  Registrarse con Google</a>
+                <a href="#" class="btn-registro-comprador facebook"><i class="fab fa-facebook-square"></i>  Registrarse con Facebook</a>
             </div>
         </form>
     </div>

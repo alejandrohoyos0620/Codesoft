@@ -15,5 +15,9 @@ class Prenda_ImpDTO implements IPrendasContratoDTO{
     return $Mapeador->mapeadorArrayDBCO ($lista);
     
     }
+    public function BuscarId($prenda,$db){
+        return $this->app->BuscarId($prenda, $db);
+
+    }
 
 }

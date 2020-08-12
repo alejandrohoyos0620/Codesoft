@@ -5,10 +5,11 @@ class MapeadorTallas extends MaperadorBase{
      }
 
     public function mapeadorCODB ($datosCO){
-       return false ;
+        return $datosCO->toString();  
     }
     public  function mapeadorDBCO ($datosDB){
-         return false;
+        $dato=$datosDB[0]->Id_Talla;
+        return $dato;
 
     }  
     /**

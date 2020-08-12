@@ -1,6 +1,6 @@
-projectKey=ItemRegistrarCompradorEstampados
+projectKey=ItemSolicitarDiseno
 serverUrl=http://localhost:9000
 serverVersion=8.4.1.35646
-dashboardUrl=http://localhost:9000/dashboard?id=ItemRegistrarCompradorEstampados
-ceTaskId=AXOn1FhAWseKxZyLsB0c
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXOn1FhAWseKxZyLsB0c
+dashboardUrl=http://localhost:9000/dashboard?id=ItemSolicitarDiseno
+ceTaskId=AXOYLUlD9kURpR5ezZAE
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXOYLUlD9kURpR5ezZAE
