@@ -42,7 +42,11 @@ class RegistroCompradorEstampadosControladora extends CI_Controller {
     && strlen($verificarContrasena) >= 1 ) {
         if($contrasena == $verificarContrasena){
             $crearRegistroComprador= new RegistroCompradorDTO($nombreUsuario1,
+<<<<<<< HEAD
             $nombre,$apellidos,$fechaNacimiento,$email,md5($contrasena),md5($verificarContrasena));
+=======
+            $nombre,$apellidos,$fechaNacimiento,$email,$contrasena,$verificarContrasena);
+>>>>>>> 93593c85701bb8c99b16498d1b2441c063341f24
                 if($this->registro->GuardarRegistro($crearRegistroComprador,$this->db)) {
                 ?> 
                     <h3 class="ok">¡Te has inscrito correctamente!</h3>

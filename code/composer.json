@@ -1,8 +1,0 @@
-{
-	"description": "The CodeIgniter framework",
-	"name": "codeigniter/framework",	
-	"require": {
-		"php": ">=5.3.7",
-		"php-di/php-di":"6.2.1"
-	}
-}
