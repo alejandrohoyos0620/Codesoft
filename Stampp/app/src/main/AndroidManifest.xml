@@ -4,11 +4,9 @@
     package="alejandro.example.stampp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -18,31 +16,40 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".RegistrarClienteActivity" android:label="@string/encRegistroCliente">
-
-        </activity>
-
-        <activity android:name=".MainActivity"
-            android:parentActivityName=".RegistrarClienteActivity"
-            android:label="@string/txtSolicitar"
-            tools:targetApi="n">
+        <activity android:name=".detallesSolicitud"></activity>
+        <activity android:name=".VisorImagen" />
+        <activity
+            android:name=".VisualizarSolicitudesDiseno"
+            android:label="VisualizarSolicitudesDiseño">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegistrarClienteActivity"
+            android:label="@string/encRegistroCliente" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/txtSolicitar"
+            android:parentActivityName=".RegistrarClienteActivity"
+            tools:targetApi="n">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".RegistrarClienteActivity" />
         </activity>
+
         <provider
-            android:authorities="${applicationId}.provider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
         </provider>
     </application>
 
