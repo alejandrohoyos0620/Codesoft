@@ -18,6 +18,18 @@ class SolicitudDiseno_Imp implements ISolicitudDisenosContrato {
         return $db->insert('solicituddiseño', $valor);
 
     }
+    public function ListarSolicitudes($db){       
+        $mapeador= new MapeadorSolicitudDisenos();
+        $query=$db->get('solicituddiseño')->result();     
+        $resultado=$mapeador->mapeadorArrayDBCO($query);
+        return $resultado;
+    }
+    public function ListarSolicitudesCategoria($id, $db){       
+        $mapeador= new MapeadorSolicitudDisenos();
+        $db->select("*")->from('solicituddiseño')->where('Id_Prenda',$id);   
+        $resultado= $db->get()->result();  
+        return $mapeador->mapeadorArrayDBCO($resultado);
+    }
     
 
 }

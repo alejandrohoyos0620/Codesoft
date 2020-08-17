@@ -16,7 +16,9 @@ class Talla_ImpDTO implements ITallasContratoDTO{
     }
     public function BuscarId($talla,$db){
         return $this->app->BuscarId($talla, $db);
-
+    }
+    public function BuscarTalla($id,$db){
+        return $this->app->BuscarTalla($id, $db);
     }
 
 }

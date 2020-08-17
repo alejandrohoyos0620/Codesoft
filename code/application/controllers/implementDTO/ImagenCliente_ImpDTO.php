@@ -24,8 +24,10 @@ class ImagenCliente_ImpDTO implements IImagenClienteContratoDTO{
     }
     public function BuscarId($idCliente,$url,$db){
         return $this->app->BuscarId($idCliente,$url,$db);
-        
-      
+    
+    }
+    public function BuscarURL($idCliente,$ID,$db){
+        return $this->app->BuscarURL($idCliente,$ID,$db);
     }
     public function Eliminar($id){
 

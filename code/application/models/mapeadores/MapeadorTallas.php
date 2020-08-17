@@ -8,9 +8,8 @@ class MapeadorTallas extends MaperadorBase{
         return $datosCO->toString();  
     }
     public  function mapeadorDBCO ($datosDB){
-        $dato=$datosDB[0]->Id_Talla;
+        $dato=new Tallas($datosDB[0]->Id_Talla,$datosDB[0]->Nombre);
         return $dato;
-
     }  
     /**
      * adicionar el model

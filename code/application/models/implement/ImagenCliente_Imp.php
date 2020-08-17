@@ -20,10 +20,16 @@ class ImagenCliente_Imp implements IImagenClienteContrato {
     }
     public function BuscarId($idCliente,$url,$db){
         $mapeador= new MapeadorImageCliente();
-        $db->select("ID")->from("imagen_cliente")->where('ID_Cliente',$idCliente)->where('URL',$url);
+        $db->select("ID,URL")->from("imagen_cliente")->where('ID_Cliente',$idCliente)->where('URL',$url);
         $resultado= $db->get()->result();
         return $mapeador->mapeadorDBCO($resultado); 
 
+    }
+    public function BuscarURL($idCliente,$ID,$db){
+        $mapeador= new MapeadorImageCliente();
+        $db->select("ID, URL")->from("imagen_cliente")->where('ID_Cliente',$idCliente)->where('ID',$ID);
+        $resultado= $db->get()->result();
+        return $mapeador->mapeadorDBCO($resultado); 
     }
     public function Eliminar($id){
 

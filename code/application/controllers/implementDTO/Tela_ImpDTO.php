@@ -19,6 +19,10 @@ class Tela_ImpDTO implements ITelasContratoDTO{
         return $this->app->BuscarId($tela, $db);
 
     }
+    public function BuscarTela($id,$db){
+        return $this->app->BuscarTela($id, $db);
+    }
+
 
 }
 

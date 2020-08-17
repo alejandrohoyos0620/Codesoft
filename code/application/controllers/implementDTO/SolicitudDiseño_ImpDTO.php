@@ -20,8 +20,16 @@ class SolicitudDiseno_ImpDTO implements ISolicitudDisenoContratoDTO{
         $mapeadorDTO= new MapeadorSolicitudDisenoDTO();
         $mapeador= $mapeadorDTO->mapeadorCODB($dato);
         return $this->app->Guardar($mapeador,$db);
-        
-
+    }
+    public function ListarSolicitudes($db){
+        $Mapeador= new MapeadorSolicitudDisenoDTO();
+        $lista= $this->app->ListarSolicitudes($db);
+        return $Mapeador->mapeadorArrayDBCO ($lista);
+    }
+    public function ListarSolicitudesCategoria($id, $db){
+        $Mapeador= new MapeadorSolicitudDisenoDTO();
+        $lista= $this->app->ListarSolicitudesCategoria($id, $db);
+        return $Mapeador->mapeadorArrayDBCO ($lista);
     }
    
 

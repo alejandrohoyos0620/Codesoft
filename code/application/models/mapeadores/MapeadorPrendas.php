@@ -8,7 +8,7 @@ class MapeadorPrendas extends MaperadorBase{
        return false ;
     }
     public  function mapeadorDBCO ($datosDB){
-        $dato=$datosDB[0]->Id_Prenda;
+        $dato=new Prendas($datosDB[0]->Id_Prenda,$datosDB[0]->TipoPrenda);
         return $dato;
 
     }  

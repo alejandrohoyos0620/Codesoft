@@ -8,7 +8,7 @@ class MapeadorTelas extends MaperadorBase{
        return false ;
     }
     public  function mapeadorDBCO ($datosDB){
-        $dato=$datosDB[0]->Id_tela;
+        $dato=new Telas($datosDB[0]->Id_tela,$datosDB[0]->Nombre);
         return $dato;
 
     }  

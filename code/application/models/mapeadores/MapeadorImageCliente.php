@@ -8,7 +8,8 @@ class MapeadorImageCliente extends MaperadorBase{
         return $datosCO->toString();  
     }
     public  function mapeadorDBCO ($datosDB){
-        $dato=$datosDB[0]->ID;
+        $dato[]=$datosDB[0]->ID;
+        $dato[]=$datosDB[0]->URL;
          return $dato;
 
     }  

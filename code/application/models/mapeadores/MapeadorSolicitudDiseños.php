@@ -13,12 +13,19 @@ class MapeadorSolicitudDisenos extends MaperadorBase{
 
     }  
     public  function mapeadorArrayDBCO ($arrayDatosDB){
-        return false;
-
-    }
+        if(isset($arrayDatosDB[0])){
+        foreach($arrayDatosDB as $r){
+         $solicituddiseno[] = new SolicitudDiseno($r->Id_solicitudDiseño, $r->Id_Prenda,
+         $r->Id_Talla,$r->Color,$r->Id_tela,$r->DescripcionDiseño,$r->Id_imagen);            
+         }
+         return $solicituddiseno;
+        }
+        else{
+            return null;
+        }
+     }
     public  function mapeadorArraryCODB ($ArrayDatosCO){
         return false;
-
     }
 
 }

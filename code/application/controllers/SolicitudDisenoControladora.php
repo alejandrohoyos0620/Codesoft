@@ -63,9 +63,12 @@ public function Solicitar()
     $userType="cliente";
     $idCliente=1;   
     if(isset($_POST['Movil'])){
-       $talla = $this -> traerIdTalla($_POST['talla']);
-       $prenda= $this -> traerIdPrenda($_POST['prenda']); 
-       $tela= $this -> traerIdTela($_POST['tela']);
+       $tallaCompleta = $this -> traerIdTalla($_POST['talla']);
+       $prendaCompleta= $this -> traerIdPrenda($_POST['prenda']); 
+       $telaCompleta= $this -> traerIdTela($_POST['tela']);
+       $talla=$tallaCompleta->getIdTalla();
+       $tela=$telaCompleta->getIdTela();
+       $talla=$tallaCompleta->getIdPrenda();
        $nombreImagen = $_POST['imagename'];
        $imagenBit = $_POST['imagenMovil'];
        $urlImagen=uploadImageMovil($userType,$nombreImagen,$imagenBit); 
@@ -86,9 +89,8 @@ public function Solicitar()
         $datos= new ImagenClienteDTO($urlImagen,$_POST['imagename'],$idCliente);        
         $this->dep->Guardar($datos,$this->db); 
         $resultadoImagen= $this->traerIdImagen($idCliente,$urlImagen);
-        
-        $crearSolicitud= new SolicitudDisenoDTO($prenda,
-        $talla,$color,$tela,$descripcion,$resultadoImagen);
+        $crearSolicitud= new SolicitudDisenoDTO(null,$prenda,
+        $talla,$color,$tela,$descripcion,$resultadoImagen[0]);
         $this->solicitud->Guardar($crearSolicitud,$this->db);
     }
     

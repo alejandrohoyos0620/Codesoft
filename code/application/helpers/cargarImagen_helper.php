@@ -9,7 +9,7 @@
 
 function uploadImage($userType,$fileName) {
         
-        $file= $fileName.rand(0,999);   
+        $file= $fileName.rand(0,999).".png";   
         $mi_archivo = 'image';
         $config['upload_path'] = "imagenes/".$userType."/";
         $config['file_name'] = $file;

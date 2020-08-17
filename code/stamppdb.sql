@@ -34,15 +34,6 @@ CREATE TABLE `imagen_cliente` (
   `ID_Cliente` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `imagen_cliente`
---
-
-INSERT INTO `imagen_cliente` (`ID`, `Nombre`, `URL`, `ID_Cliente`) VALUES
-(1, 'batman', '0', 1),
-(2, 'batman', '0', 1),
-(3, 'batman', '0', 1),
-(4, 'batman', '0', 1);
 
 -- --------------------------------------------------------
 
@@ -221,7 +212,7 @@ ALTER TABLE `telas`
 -- AUTO_INCREMENT de la tabla `imagen_cliente`
 --
 ALTER TABLE `imagen_cliente`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `imagen_estampador`

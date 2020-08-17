@@ -7,8 +7,9 @@ private $color;
 private $idTela;
 private $descripcion;
 private $idImagen;
- public function __construct(  $idprenda,$idtalla,$color,$idtela,$descripcion,$idimagen){
-       $this->idPrenda=$idprenda;
+ public function __construct($idSolicitudDiseno,$idprenda,$idtalla,$color,$idtela,$descripcion,$idimagen){
+    $this->idSolicitudDiseno=$idSolicitudDiseno;
+    $this->idPrenda=$idprenda;
      $this->idTalla=$idtalla;
      $this->color=$color;
      $this->idTela=$idtela;

@@ -19,5 +19,9 @@ class Prenda_ImpDTO implements IPrendasContratoDTO{
         return $this->app->BuscarId($prenda, $db);
 
     }
+    public function BuscarPrenda($id,$db){
+        return $this->app->BuscarPrenda($id, $db);
+    }
+
 
 }
