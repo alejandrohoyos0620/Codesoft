@@ -17,7 +17,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".detallesSolicitud"></activity>
-        <activity android:name=".VisorImagen" />
+        <activity android:name=".VisorImagen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".VisualizarSolicitudesDiseno"
             android:label="VisualizarSolicitudesDiseño">

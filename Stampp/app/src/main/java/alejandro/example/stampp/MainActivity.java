@@ -148,6 +148,9 @@ public class MainActivity extends AppCompatActivity {
             btnFoto.setEnabled(false);
         }
 
+
+
+
     }
 
     private boolean validarPermisos() {
