@@ -117,7 +117,7 @@ class VisualizarSolicitudesDisenoControladora extends CI_Controller
 			$resultadoSolicitudDisenos = $this->traerSolicitudesDisenoCategoria(4);
 
 			$i = 0;
-			print_r($resultadoSolicitudDisenos);
+			
 			if ($resultadoSolicitudDisenos != null) {
 				foreach ($resultadoSolicitudDisenos as $r) {
 					if ($r != null) {
@@ -175,13 +175,12 @@ class VisualizarSolicitudesDisenoControladora extends CI_Controller
 	
 	public function traerSolicitudesDiseno()
 	{
-		$listaSolicitudesDiseno = $this->solicitud->ListarSolicitudes($this->db);
-		return  $listaSolicitudesDiseno;
+		return  $listaSolicitudesDiseno = $this->solicitud->ListarSolicitudes($this->db);
 	}
+
 	public function traerSolicitudesDisenoCategoria($id)
 	{
-		$listaSolicitudesDiseno1 = $this->solicitud->ListarSolicitudesCategoria($id, $this->db);
-		return  $listaSolicitudesDiseno1;
+		return  $listaSolicitudesDiseno1 = $this->solicitud->ListarSolicitudesCategoria($id, $this->db);
 	}
 	public function traerUrlImagen($idCliente, $id)
 	{
