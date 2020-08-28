@@ -3,6 +3,7 @@ package alejandro.example.stampp;
 import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +24,14 @@ public class Adaptador extends BaseAdapter implements Filterable {
     Context contexto;
     ArrayList<Solicitud> datos;
     int[] datosImg;
+    ArrayList<String> arregloRutas = new ArrayList<String>();
 
-    public Adaptador(Context contexto, ArrayList<Solicitud>  datos, int[] imagenes) {
+
+    public Adaptador(Context contexto, ArrayList<Solicitud>  datos, int[] imagenes, ArrayList<String> arregloRutas) {
         this.contexto = contexto;
         this.datos = datos;
         this.datosImg = imagenes;
+        this.arregloRutas = arregloRutas;
         inflater = (LayoutInflater) contexto.getSystemService(contexto.LAYOUT_INFLATER_SERVICE);
 
     }
@@ -48,23 +54,26 @@ public class Adaptador extends BaseAdapter implements Filterable {
         talla.setText("Talla: " + datos.get(i).getTalla());
         color.setText("Color: " + datos.get(i).getColor());
         material.setText("Material: " + datos.get(i).getTela());
-        imagen.setImageResource(datosImg[i]);
+        //imagen.setImageResource(datosImg[i]);
+        Log.i("imagenes", "Picasso va a pintar: +"+arregloRutas.get(i));
+        Log.i("imagenes", "El iterador es:  +"+i);
+        Picasso.get().load(arregloRutas.get(i)).into(imagen);
         imagen.setTag(i);
-        imagen.setOnClickListener(new View.OnClickListener() {
+       /* imagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent visorImagen = new Intent(contexto, VisorImagen.class);
-                visorImagen.putExtra("IMG", datosImg[(Integer) v.getTag()]);
+                visorImagen.putExtra("IMG", arregloRutas);
                 contexto.startActivity(visorImagen);
             }
-        });
+        }); */
         return view;
     }
 
 
     @Override
     public int getCount() {
-        return datosImg.length;
+        return arregloRutas.size();
     }
 
     @Override

@@ -6,6 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.DownloadManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,10 +28,12 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,14 +55,15 @@ public class VisualizarSolicitudesDiseno extends AppCompatActivity {
     RequestQueue requestQueue;
     ArrayList<Solicitud> datos = new ArrayList<Solicitud>();
     ArrayList<String> datosUrl = new ArrayList<String>();// acá almaceno las url de las imagenes.
-
+    ImageView respuesta = null;
+    ArrayList<String> arregloRutas = new ArrayList<String>();
 
     int[] datosImg={R.drawable.pokemon,R.drawable.dragonball,R.drawable.pokemon};
     Button Actualizar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        jsonParse( "http://192.168.1.50/code/?c=VisualizarSolicitudesDisenoControladora&m=EnviarMovil");
+        jsonParse( "http://192.168.1.9/Codesoft/code/?c=VisualizarSolicitudesDisenoControladora&m=EnviarMovil");
         setContentView(R.layout.activity_visualizar_solicitudes_diseno);
         listaSolicitudes = (ListView) findViewById(R.id.listaSolicitudes);
         toolbar=findViewById(R.id.toolbar);
@@ -72,17 +78,19 @@ public class VisualizarSolicitudesDiseno extends AppCompatActivity {
                 startActivity(detallesSolicitud);
             }
         });
-        //System.out.println("ya comprobe hijodeputa");
-       // traer("http://192.168.0.10/webservices/TraerImagen.php");
 
-       //System.out.println("las urls son "+urls);
-       /* actualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               ,ListaDeRutasImagenes);
-            }
-        }); */
     }
+private String traerImagen(ArrayList<String> datosUrl,int iterador){
+
+        Log.i("imagenes", "el iterador que entra es: +"+iterador);
+        String ruta = "http://192.168.1.9/Codesoft/code/imagenes/cliente/"+datosUrl.get(iterador);
+        Log.i("imagenes", "la ruta que voy a retornar es: +"+ruta);
+        return ruta;
+
+}
+
+
+
 
  //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  private void jsonParse(String url2){
@@ -94,18 +102,23 @@ public class VisualizarSolicitudesDiseno extends AppCompatActivity {
 
                          JSONObject jsonObject = null;
                          for (int i = 0; i < response.length(); i++) {
+                             String ruta;
                              try {
                                  jsonObject = response.getJSONObject(i);
                                  Solicitud solicitud= new Solicitud(jsonObject.getString("prenda"),jsonObject.getString("talla"),
                                          jsonObject.getString("tela"),jsonObject.getString("color"),jsonObject.getString("descripcion"));
                                  datos.add(solicitud);
                                  datosUrl.add(jsonObject.getString("urlImagen"));
-                                 adaptador=new Adaptador(getApplicationContext(), datos, datosImg);
+                                 Log.i("imagenes", "el iterador del for: +"+i);
+                                 ruta=traerImagen(datosUrl,i-1);
+                                 arregloRutas.add(ruta);
+                                 adaptador=new Adaptador(getApplicationContext(), datos, datosImg,arregloRutas);
                                  listaSolicitudes.setAdapter(adaptador);
 
                              } catch (JSONException e) {
                                  Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT);
                              }
+
                          }
                      }else{
                          Toast.makeText(VisualizarSolicitudesDiseno.this, "Datos invalidos2!!", Toast.LENGTH_SHORT).show();
