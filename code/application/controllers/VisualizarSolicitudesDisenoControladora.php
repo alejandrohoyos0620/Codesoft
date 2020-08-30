@@ -32,6 +32,14 @@ class VisualizarSolicitudesDisenoControladora extends CI_Controller
 		//----------inyeccionTelas-------------//
 		$this->Todo = TRUE;
 	}
+
+
+	/**
+	*index Carga 3 vistas header, vistaMenuVisualizarSolicitudesDiseno 
+	*y  vistaVisualizarSolicitudesDiseno a la cual le enviamos las los datos 
+	*de las solicutudes de diseño , la cual puede varias dependiendo del tipo de 
+	*fitlo que el usuario escoja.
+	*/
 	public function index()
 	{
 		$resultadoSolicitudDisenos = $this->traerSolicitudesDiseno();
@@ -150,6 +158,11 @@ class VisualizarSolicitudesDisenoControladora extends CI_Controller
 			$this->load->view('vistaVisualizarSolicitudesDiseno', compact("resultadoSolicitudDisenos", "resultadoUrlImagen", "resultadoTelas", "resultadoPrendas", "resultadoTallas"));
 		}
 	}
+	/**
+	 * Este metodo solo puede ser utilizado desde el backend del dispositivo movil como recurso para solicitar los datos
+	 * de las solicitudes a la base de datos y luego son retornados en un formato json para ser ultilizados en el
+	 * backend movil.
+	 */
 	public function EnviarMovil()
 	{
 		$respuesta = $this->traerSolicitudesDiseno();
@@ -172,17 +185,31 @@ class VisualizarSolicitudesDisenoControladora extends CI_Controller
 		$json = json_encode($valores);	
 		echo $json;
 	}
-	
+     /**
+	  * Esta funcion retorna una lista con todas la solicitudes 
+	  *de diseños que se encuentras en la base de datos:
+	  */
 	public function traerSolicitudesDiseno()
 	{
 		$listaSolicitudesDiseno = $this->solicitud->ListarSolicitudes($this->db);
 		return  $listaSolicitudesDiseno;
 	}
+
+	/**
+	  * Esta funcion retorna una lista con todas la solicitudes 
+	  *de diseños que se encuentras en la base de datos, en las cuales su id corresponda con
+	  *con el id que se ingresa por parametro ($id).
+	  */
 	public function traerSolicitudesDisenoCategoria($id)
 	{
 		$listaSolicitudesDiseno1 = $this->solicitud->ListarSolicitudesCategoria($id, $this->db);
 		return  $listaSolicitudesDiseno1;
 	}
+	/**
+	 * traerUrlImagen, se encarga de traer la información almacena en el campo 
+	 * UrlImagen de la base de datos,en la cual su id de clietne y id de prenda 
+	 * corresponda a los ingresados por parametro ($idCliente,$id).
+	 */
 	public function traerUrlImagen($idCliente, $id)
 	{
 		return $this->dep->BuscarURL($idCliente, $id, $this->db);
